@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Propriétaire
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>propriétaire</h1>
+		<div class="row">
+			{% for c in proprietaire %}
+
+
+				<div class="col col-3">
+
+					<div class="card-body">
+						<a href="{{ path("proprietaire_modifier",{"id": c.id})}}" class="mt-5 btn btn-primary">Modifier un Proprietaire</a>
+						<a href="{{ path("proprietaire_supprimer",{"id": c.id})}}" class="mt-5 btn btn-primary">Supprimer un Proprietaire</a>
+						<h2 class="card-title">{{ c.nom }}</h2>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+	<a href="{{ path("proprietaire_ajouter") }}" class="mt-5 btn btn-primary">Ajouter un Proprietaire</a>
+
+</div>{% endblock %}
